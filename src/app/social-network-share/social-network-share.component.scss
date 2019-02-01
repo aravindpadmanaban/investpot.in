@@ -1,0 +1,12 @@
+@import '../connect-wth-us/connect-wth-us.component.scss';
+
+.social-network-share-icon {
+    color: white;
+    text-decoration: none;
+    padding: 0 5px;
+    background:$facebook-color;
+}
+
+.social-network-share-icon .fab{
+    padding: 5px;
+}

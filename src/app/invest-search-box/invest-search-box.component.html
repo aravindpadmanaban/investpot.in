@@ -1,0 +1,136 @@
+<!-- <app-navbar></app-navbar> -->
+<main class="main-container">
+
+  <section class="carousel-container">
+    <ngx-carousel [inputs]="carouselOne">
+      <ngx-item NgxCarouselItem class="carousal-item">
+        <h1 class="carousal-item-detail mdc-theme--text-primary-on-primary">
+          Welcome to Investpot.in - Financial and Investment planning
+        </h1>
+
+      </ngx-item>
+      <ngx-item NgxCarouselItem class="carousal-item">
+        <h1 class="carousal-item-detail mdc-theme--text-primary-on-primary">
+          A right investment pays the best interest
+        </h1>
+      </ngx-item>
+      <ngx-item NgxCarouselItem class="carousal-item">
+        <h1 class="carousal-item-detail mdc-theme--text-primary-on-primary">
+          One stop for all your investments
+        </h1>
+      </ngx-item>
+      <button NgxCarouselPrev class='leftRs'>&lt;</button>
+      <button NgxCarouselNext class='rightRs'>&gt;</button>
+    </ngx-carousel>
+  </section>
+
+  <div class="mdc-layout-grid">
+    <div class="mdc-layout-grid__inner">
+      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6">
+        <section class="invest-search-box-container">
+
+          <form [formGroup]="investSearchForm" #investSearchNgForm="ngForm" (ngSubmit)="onSubmitInvest()">
+            <div class="mdc-layout-grid__inner">
+              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
+                <div class="mdc-layout-grid__inner">
+                  <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
+                    <div class="mdc-layout-grid__inner mdc-elevation--z2">
+                      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12 search-heading mdc-theme--secondary-bg">
+                        <h2 class="mdc-typography--subheading1 mdc-theme--text-primary-on-primary">
+                          Research investment options
+                        </h2>
+                      </div>
+                      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6 search-inner">
+                        <div class="example-container">
+                          <mat-form-field hintLabel="Min 1000 rupees">
+                            <input matInput id="amount" type="number" autocomplete="off" class="form-control" placeholder="Enter investment amount" formControlName="amount"
+                              [(ngModel)]="modelInvest.amount" matTooltip="Enter amount you want to invest" required>
+                          </mat-form-field>
+                          <div *ngIf="amount.invalid && (amount.dirty || amount.touched)" class="alert alert-danger">
+                            <div *ngIf="amount.errors.required">
+                              Amount is required.
+                            </div>
+                            <div *ngIf="amount.errors.minlength || amount.errors.min">
+                              Amount should be more than &#x20B9;1000.
+                            </div>
+                            <div *ngIf="amount.errors.max">
+                              Amount should not be more than &#x20B9;10000000.
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6 search-inner">
+                        <div class="example-container">
+                          <mat-form-field>
+                            <mat-select id="years" formControlName="years" matInput placeholder="Select years" [(ngModel)]="modelInvest.years" 
+                            matTooltip="Select number of years" required>
+                              <mat-option *ngFor="let year of years" [value]="year">{{year}}
+                              </mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                        </div>
+                      </div>
+
+                      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12 search-inner">
+                        <div class="center-button">
+                          <button type="submit" class="mdc-button mdc-button--compact mdc-ripple-upgraded 
+                      mdc-theme--secondary-bg mdc-theme--text-primary-on-primary" [disabled]="investSearchForm.invalid"
+                      matTooltip="Research investment options">
+                            Research
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+
+        </section>
+      </div>
+
+
+      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6">
+        <section class="investment-options-short-list-container">
+          <div class="mdc-card">
+            <!-- mdc-theme--secondary-bg -->
+            <!-- <div class="mdc-typography--subheading1 mdc-theme--secondary-bg mdc-theme--text-primary-on-primary">
+                Investment options
+              </div> -->
+
+
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12 search-heading mdc-theme--secondary-bg">
+              <h2 class="mdc-typography--subheading1 mdc-theme--text-primary-on-primary">
+                Investment options
+              </h2>
+            </div>
+
+            <hr class="mdc-list-divider">
+
+            <a *ngFor="let INVESTMENT_TYPE of INVESTMENT_TYPES_LIST; index as i" class="mdc-ripple-surface mdc-ripple-upgraded investment-options-one-liner"
+              routerLink="/investment-option-detail/{{INVESTMENT_TYPE.type}}" matTooltip="Read more about {{ INVESTMENT_TYPE.shortName }}">
+
+              <h2 *ngIf="i < 3" class="mdc-typography--subheading2 investment-option-card-heading">
+                {{ INVESTMENT_TYPE.name }}
+                <i class="material-icons float-right">keyboard_arrow_right</i>
+              </h2>
+
+              <hr *ngIf="i < 3" class="mdc-list-divider">
+            </a>
+            <div class="mdc-card__actions mdc-card__actions--full-bleed">
+              <a class="mdc-button mdc-card__action mdc-card__action--button mdc-ripple-upgraded" routerLink="/investment-options" matTooltip="Show all investment options">
+                All Investment options
+                <i class="material-icons" aria-hidden="true">arrow_forward</i>
+              </a>
+            </div>
+          </div>
+
+        </section>
+      </div>
+    </div>
+  </div>
+
+</main>
+<!-- <app-footer></app-footer> -->

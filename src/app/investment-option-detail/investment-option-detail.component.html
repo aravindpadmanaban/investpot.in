@@ -1,0 +1,33 @@
+<!-- <app-navbar></app-navbar> -->
+<main class="main-container">
+  <section>
+      <div class="mdc-layout-grid__inner">
+          <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
+              
+<div class="mdc-card investment-detail-container">
+    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12 mdc-theme--secondary-bg investment-detail-heading">
+      <h2 class="mdc-typography--subheading1 mdc-theme--text-primary-on-primary">
+          {{investmentDetailsForSelected['name']}}
+      </h2>      
+    </div>
+    
+    <div class="mdc-typography--body1 mdc-layout-grid__cell mdc-layout-grid__cell--span-12 investment-detail-desc">
+        {{investmentDetailsForSelected['desc']}}
+    </div>    
+    
+    <div class="investment-benefits">
+        <h3 class="mdc-theme--secondary-dark">Benefits</h3>
+    <ul *ngFor="let benefit of investmentDetailsForSelected['benefits']" class="mdc-list mdc-list--dense">        
+      <li class="mdc-list-item__text investment-benefits-list">
+      {{benefit}}
+    </li>
+    </ul>
+  </div>
+  <div class="sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+  </div>
+</section>
+
+</main>
+<!-- <app-footer></app-footer> -->

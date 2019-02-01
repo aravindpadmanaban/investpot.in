@@ -1,0 +1,16 @@
+#navbar-title {
+color: white;
+}
+
+.mdc-drawer__header-content {
+    background: url('../../assets/images/brand_logo.png') no-repeat center;
+}
+.mdc-drawer__header-content img {
+    width: 184px; 
+    height: 159px;
+    float: right;
+}
+
+#drawer-navbar .mdc-list-item{
+cursor: pointer;
+}

@@ -1,0 +1,36 @@
+<!-- <app-navbar></app-navbar> -->
+<main class="main-container">
+        <section class="search-results-container">
+                <div *ngIf="chart">
+                        <div [chart]="chart"></div>
+                </div>
+                <div class="sharethis-inline-share-buttons"></div>
+                <!-- <app-social-network-share></app-social-network-share> -->
+        </section>
+        <section style="display: none">
+                <div class="related-options-container">
+                        <!-- <hr> -->
+
+                        <div class="md-chips">
+                                        <ng-container *ngFor="let relatedYear of relatedYears">
+                                <div class="md-chip md-chip-clickable mdc-theme--secondary-dark-bg mdc-theme--text-primary-on-primary"
+                                *ngIf="relatedYear == userInvestYears">
+                {{relatedYear}} y
+                                </div>
+
+                                <div class="md-chip md-chip-clickable"
+                                (click)="relatedYearNavigate($event)"
+                                *ngIf="relatedYear != userInvestYears">
+                {{relatedYear}} y
+                        </div>
+                                
+
+                        </ng-container>
+                        </div>
+
+                </div>
+
+
+        </section>
+</main>
+<!-- <app-footer></app-footer> -->

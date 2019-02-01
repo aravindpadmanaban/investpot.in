@@ -1,0 +1,78 @@
+  <header class="mdc-toolbar mdc-toolbar--fixed mdc-toolbar--waterfall mdc-theme--secondary-dark-bg">
+    <div class="mdc-toolbar__row mdc-theme--secondary-dark-bg">
+      <section class="mdc-toolbar__section mdc-toolbar__section--align-start mdc-theme--secondary-dark-bg">
+          <button id="drawer_menu_icon" class="material-icons mdc-toolbar__menu-icon" matTooltip="Menu">
+            menu
+          </button>
+          <!-- <button id="navbar-brand-image" class="brand-image mdc-toolbar__menu-icon" routerLink="/">
+              <img src="../../assets/images/brand_logo.png" alt="Investpot.in" title="Investpot.in">
+          </button>   -->
+        <a id="navbar-title" class="mdc-toolbar__title" routerLink="/" matTooltip="Investpot - Home">
+            InvestPot
+        </a>
+        
+      </section>
+      <section class="mdc-toolbar__section mdc-toolbar__section--align-end" role="toolbar">
+    
+      </section>
+    </div>
+  </header>
+
+  <nav id="basic-tab-bar" class="mdc-tab-bar mdc-toolbar-fixed-adjust">
+      <nav class="mdc-tab-bar">
+        <a class="mdc-tab" routerLink="" routerLinkActive="mdc-tab--active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+        <a class="mdc-tab" routerLink="/investment-options" routerLinkActive="mdc-tab--active"
+        [routerLinkActiveOptions]="{ exact: true }">Investment options</a>
+        <a class="mdc-tab" routerLink="/about-us" routerLinkActive="mdc-tab--active"
+        [routerLinkActiveOptions]="{ exact: true }">Our Vision</a>
+        <!-- <a class="mdc-tab" routerLink="contact-us" routerLinkActive="mdc-tab--active">Contact us</a> -->
+      </nav>
+    </nav>
+    
+
+    <aside class="mdc-drawer mdc-drawer--temporary">
+        <nav class="mdc-drawer__drawer">
+          <header class="mdc-drawer__header">
+             <div id="drawer-header-image" class="mdc-drawer__header-content mdc-theme--text-secondary-on-secondary mdc-theme--secondary-dark-bg">                
+            </div> 
+          </header>
+          <nav id="drawer-navbar" class="mdc-drawer__content mdc-list-group">
+            <div class="mdc-list">
+                <a class="mdc-tab drawer-nav-link" routerLinkActive="mdc-list-item--selected" 
+                class="mdc-list-item" (click)="onDrawerClickClose($event, '/')">
+                    <i class="material-icons mdc-list-item__graphic mdc-theme--secondary-dark" aria-hidden="true">
+                      home
+                    </i>
+                  Home
+                </a>
+
+                <a class="mdc-tab drawer-nav-link" routerLinkActive="mdc-list-item--selected" 
+                class="mdc-list-item" (click)="onDrawerClickClose($event, 'investment-options')">
+                    <i class="material-icons mdc-list-item__graphic mdc-theme--secondary-dark" aria-hidden="true">
+                      view_list
+                    </i>
+                    Investment options
+                </a>
+
+                <a class="mdc-tab drawer-nav-link" routerLinkActive="mdc-list-item--selected" 
+                class="mdc-list-item" (click)="onDrawerClickClose($event, 'contact-us')">
+                    <i class="material-icons mdc-list-item__graphic mdc-theme--secondary-dark" aria-hidden="true">
+                      contact_mail
+                    </i>
+                    Contact us
+                </a>
+
+                <a class="mdc-tab drawer-nav-link" routerLinkActive="mdc-list-item--selected" 
+                class="mdc-list-item" (click)="onDrawerClickClose($event, 'about-us')">
+                    <i class="material-icons mdc-list-item__graphic mdc-theme--secondary-dark" aria-hidden="true">
+                      visibility
+                    </i>
+                    Our Vision
+                </a>
+
+                
+
+                </div>
+          </nav>
+        </nav>
+      </aside>

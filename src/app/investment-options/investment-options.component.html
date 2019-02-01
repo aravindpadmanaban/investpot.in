@@ -1,0 +1,32 @@
+<!-- <app-navbar></app-navbar> -->
+<main class="main-container">
+
+
+<section>
+<div class="investment-options-list-container">
+    <div class="mdc-card mdc-card--stroked">
+        <div 
+        *ngFor="let investmentOption of investmentDetail">
+        <div class="investment-options-overview mdc-ripple-surface mdc-ripple-upgraded">
+          <h2 class="mdc-typography--headline">              
+              {{investmentOption.name}}
+          </h2>
+          <p class="mdc-typography--body1">
+              {{investmentOption.shortDesc}}
+          </p>
+        </div>
+
+              <a class="mdc-button mdc-card__action mdc-card__action--button mdc-ripple-upgraded" 
+              routerLink="/investment-option-detail/{{investmentOption.type}}" matTooltip="Research more about {{investmentOption.name}}">
+                Read more
+                <i class="material-icons" aria-hidden="true">arrow_forward</i>
+              </a>            
+            <hr class="mdc-list-divider">
+        </div>
+        
+
+      </div>
+    </div>
+</section>
+</main>
+<!-- <app-footer></app-footer> -->

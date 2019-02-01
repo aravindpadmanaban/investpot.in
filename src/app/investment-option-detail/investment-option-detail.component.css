@@ -1,0 +1,15 @@
+  .investment-detail-heading, .investment-detail-desc,
+  .investment-benefits h3 {
+      padding-left: 8px;
+  }
+
+  .investment-detail-desc {
+      padding-top: 16px;
+  }
+.investment-benefits-list {
+    padding-left: 16px;
+}
+.sharethis-inline-share-buttons {
+    padding-bottom: 20px;
+    padding-top: 20px;
+}

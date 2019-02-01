@@ -1,0 +1,23 @@
+$facebook-color: #3B5998;
+
+.social-network-icon {
+    padding: 0 5px;
+    text-decoration: none;
+    color: black;
+}
+
+.social-network-icon.facebook:hover {
+    color: $facebook-color;
+}
+
+.social-network-icon.twitter:hover {
+    color: #55ACEE;    
+}
+
+.social-network-icon.instagram:hover {
+    color: #fb3958;    
+}
+
+.social-network-icon.google-plus:hover {
+    color: #dd4b39;    
+}
